@@ -19,3 +19,20 @@ Game.prototype.numbOnly = function() {
     return "PASS";
   }
 }
+
+Game.prototype.noDupe = function() {
+  var failureLog = [];
+  var keepLog = [];
+  for (var i = 0; i < 9; i++) {
+    var num = this.row1[i]
+    if (num === "") {
+      failureLog.push(this.row1[num])
+    } else if (keepLog.indexOf(num) < 0) {
+      keepLog.push(this.row1[i]);
+    } else {
+      failureLog.push(this.row1[num])
+    }
+  }
+  console.log(failureLog, keepLog)
+
+}
