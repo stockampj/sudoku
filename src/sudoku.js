@@ -23,16 +23,17 @@ Game.prototype.numbOnly = function() {
 Game.prototype.noDupe = function() {
   var failureLog = [];
   var keepLog = [];
+  var dumbLog = [];
   for (var i = 0; i < 9; i++) {
     var num = this.row1[i]
     if (num === "") {
-      failureLog.push(this.row1[num])
+    dumbLog.push("");
     } else if (keepLog.indexOf(num) < 0) {
       keepLog.push(this.row1[i]);
     } else {
       failureLog.push(this.row1[num])
     }
   }
-  console.log(failureLog, keepLog)
+  return failureLog;
 
 }

@@ -10,9 +10,18 @@ describe ('Game', function(){
 
 
  describe ('Game', function(){
-   it('should push unallowed values into teh failureLog array', function(){
+   it('should push unallowed values into the failureLog array', function(){
      var testGame = new Game();
      expect(testGame.numbOnly()).toEqual("PASS")
    });
 
+ });
+
+ describe ('Game', function(){
+   it('should report the indices of any duplicate values in a row', function(){
+     var testGame = new Game();
+     expect(testGame.noDupe()).toEqual([])
+   }
+
+   )
  });
